@@ -1,0 +1,60 @@
+.Header {
+    text-align: start;
+}
+
+.headerleft {
+    text-align: end;
+    padding: 15px;
+    border: 7px;
+}
+
+.header-mid {
+    text-align: start;
+    padding-left: 10%;
+    font-size: xx-large;
+    padding-top: 2%;
+}
+
+.style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.template-snaps {
+    height: 240px;
+    padding-right: 30px;
+    width: 200px;
+    position: relative;
+    text-align: center;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: 7px;
+    text-align: center;
+}
+
+.imageText {
+    /* border-right: 10px; */
+    opacity: 0;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    bottom: 50%;
+    /* left: 21.5%; */
+    width: 100px;
+}
+
+.imageContainer:hover .imageText {
+    opacity: 1;
+    z-index: 1;
+}
+
+.opacity {
+    display: none;
+}

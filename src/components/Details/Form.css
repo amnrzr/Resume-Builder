@@ -1,0 +1,406 @@
+/* .formCard {
+    width: 00px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #c4c0c0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input {
+    width: 40%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.detailsPage .list {
+    padding-right: 300px;
+}
+
+.detailsPage button {
+    position: relative;
+    top: 300px;
+}
+
+.detailsPage input {
+    margin-right: 20px;
+}
+
+.detailsPage form {
+    margin-top: 70px;
+}
+
+*/
+
+
+/*trial*/
+
+
+/* EducationForm.css */
+
+.detailsPage {
+    display: flex;
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+.education-form {
+    width: 700px;
+    margin-left: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 5%;
+    padding: 1px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    margin-left: 5%;
+    height: 55px;
+    margin-top: 50px;
+}
+
+.education-form input {
+    width: 100%;
+    padding: 8px;
+    margin: 2px;
+}
+
+.education-form button {
+    width: 5%;
+    padding: 1px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    margin-left: 5%;
+    height: 55px;
+    margin-top: 50px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.form-group-Card input {
+    display: flex;
+    width: 100%;
+    width: 310px;
+    /* flex-direction: column !important; */
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-resume {
+    border: 1px solid #605c5c;
+    /* width: 500px;
+    margin-left: 40%; */
+}
+
+
+/* trial*/
+
+
+/* ResumeTemplate.css */
+
+.resume-container {
+    max-width: 1200px;
+    /* margin: 20px auto; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.card1 {
+    background: linear-gradient(to right, #255a7e 0%, #3498db 10%, #fff 10%, #fff 100%);
+}
+
+.card3 {
+    background: linear-gradient(to bottom, #255a7e 0%, #1a3d53 15%, #fff 10%, #fff 100%);
+}
+
+.card1 h1 {
+    padding-top: 5px;
+    color: #4b696d !important;
+    padding-left: 1px !important;
+    margin: 70px 0;
+}
+
+.header {
+    text-align: start;
+    margin-left: 60px;
+}
+
+.header h1 {
+    color: #333;
+}
+
+.header p {
+    color: #777;
+}
+
+.section {
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+h4 {
+    color: #555;
+    text-align: start;
+    margin-left: 70px;
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+p {
+    margin: 5px 0px 0px 70px;
+    color: #777;
+    font-size: small;
+    /* Enable text wrapping */
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100%;
+    background-color: #3498db;
+    /* Set your desired background color */
+    border-radius: 5px 0 0 5px;
+}
+
+.section2 {
+    width: 250px;
+}
+
+.section2 h4 {
+    color: #555;
+    text-align: center;
+    margin-left: 60px;
+    padding-top: 30px;
+}
+
+.section3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+.section3 h4 {
+    text-align: center;
+    margin-left: 70px;
+}
+
+.wrap {
+    word-wrap: break-word;
+    max-width: 150px;
+}
+
+.filename-input {
+    margin-left: 730px;
+    width: 400px;
+    height: 50px;
+    margin-top: 150px;
+    border: 1px solid #7bad7a;
+    position: fixed;
+}
+
+.opacity {
+    display: none;
+}
+
+
+/* themes for cards*/
+
+
+/* ... (Previous styles) */
+
+.elegant-theme {
+    background-color: #e4eab4;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    /* Change to your preferred font */
+}
+
+.elegant-theme .header h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-right: 50px;
+    margin: 70px 0;
+}
+
+.elegant-theme .header p {
+    color: #777;
+    font-size: 1.2em;
+    padding-right: 120px;
+    text-align: center;
+}
+
+.elegant-theme .section3 {
+    color: #333;
+    margin-top: 20px;
+    /* Add margin for spacing */
+}
+
+.elegant-theme .section3 h4 {
+    border-bottom: 2px solid #3b3838;
+    /* Add a border line under headings */
+    padding-bottom: 5px;
+    /* Adjust spacing after heading */
+}
+
+.elegant-theme .section3 p {
+    /* margin: 70px 0; */
+    /* Add margin for spacing between paragraphs */
+}
+
+.elegant-theme .section4 p {
+    margin-bottom: 200px !important;
+    /* Add margin for spacing between paragraphs */
+}
+
+
+/* ... (Previous styles) */
+
+
+/* ... (Previous styles) */
+
+.clean-theme {
+    background-color: #ffffff;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    /* Change to your preferred font */
+}
+
+.clean-theme .header {
+    position: relative;
+}
+
+.clean-theme .header h1 {
+    color: #333;
+    font-size: 2em;
+    margin: 70px 0;
+}
+
+.clean-theme .header p {
+    color: #777;
+    font-size: 1.2em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+}
+
+.clean-theme .section {
+    border-bottom: 1px solid #ddd;
+    /* Add a subtle border line between sections */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.clean-theme .section h4 {
+    margin-bottom: 10px;
+}
+
+.clean-theme .section p {
+    margin: 10px 0;
+}
+
+.clean-theme .section:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 30%;
+    height: 2px;
+    background-color: #3498db;
+}
+
+
+/* Creative Blocks Styles */
+
+.creative-blocks {
+    background-color: #f9f9f9;
+    color: #555;
+    font-family: 'Verdana', sans-serif;
+}
+
+.creative-blocks header {
+    background-color: #e74c3c;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.creative-blocks h1 {
+    margin: 0;
+}
+
+.creative-blocks p {
+    margin: 40px 0;
+}
+
+.creative-blocks .form-row {}
+
+.creative-blocks .section,
+.creative-blocks .section2 {}
+
+.imageText {}
+
+
+/* Add more styles as needed */
+
+
+/* Add more styles as needed */
