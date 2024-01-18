@@ -1,4 +1,7 @@
+// Import styles for Navbar
 import "./Navbar.css";
+
+// Import React and other necessary components from libraries
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
@@ -12,7 +15,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
+// Define the width of the drawer
 const drawerWidth = 240;
+
+// Create a custom theme for the logo
 const logoTheme = createTheme({
   palette: {
     primary: {
@@ -21,19 +27,21 @@ const logoTheme = createTheme({
   },
 });
 
+// Navbar component definition
 function Navbar(props) {
-  //   const { window } = props;
+  // State to manage mobile drawer open/close
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
+  // Function to handle toggle of the mobile drawer
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  // JSX structure for the drawer content
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         <NavLink to="/">
-          {" "}
           <img
             src="https://www.almabetter.com/_next/image?url=https%3A%2F%2Falmablog-media.s3.ap-south-1.amazonaws.com%2Flogo1_edfc81b31b.png&w=256&q=75"
             height="30px"
@@ -63,12 +71,15 @@ function Navbar(props) {
     </Box>
   );
 
+  // JSX structure for the main Navbar component
   return (
     <>
       <Box sx={{ display: "flex" }}>
         <ThemeProvider theme={logoTheme}>
+          {/* Main AppBar for larger screens */}
           <AppBar component="nav" position="sticky" className="appbar" sx={{ color: "primary", boxShadow: "none" }}>
             <Toolbar id="toolbar">
+              {/* Menu icon for smaller screens */}
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
@@ -78,6 +89,8 @@ function Navbar(props) {
                 sx={{ mr: 2, display: { sm: "none" } }}>
                 <MenuIcon />
               </IconButton>
+
+              {/* Logo and brand for the Navbar */}
               <Typography
                 variant="h6"
                 component="div"
@@ -89,7 +102,6 @@ function Navbar(props) {
                   top: "5px",
                 }}>
                 <NavLink to="/" className="homeIcon">
-                  {" "}
                   <img
                     src="https://www.almabetter.com/_next/image?url=https%3A%2F%2Falmablog-media.s3.ap-south-1.amazonaws.com%2Flogo1_edfc81b31b.png&w=256&q=75"
                     height="30px"
@@ -97,13 +109,9 @@ function Navbar(props) {
                   />
                 </NavLink>
               </Typography>
+
+              {/* Navigation links for larger screens */}
               <Box sx={{ display: { xs: "none", sm: "block" } }}>
-                {/* sx={{ 
-                                        color: '#080808', 
-                                        fontSize: '13px', 
-                                        fontWeight: '500', 
-                                        fontFamily: 'DM Sans', 
-                                        }} */}
                 <NavLink to="/" className="nav-link" color="inherit">
                   Resume Templates
                 </NavLink>
@@ -117,9 +125,10 @@ function Navbar(props) {
             </Toolbar>
           </AppBar>
         </ThemeProvider>
+
+        {/* Drawer for smaller screens */}
         <Box component="nav">
           <Drawer
-            //   container={container}
             variant="temporary"
             open={mobileOpen}
             onClose={handleDrawerToggle}
@@ -141,4 +150,5 @@ function Navbar(props) {
   );
 }
 
+// Export the Navbar component as the default export
 export default Navbar;
