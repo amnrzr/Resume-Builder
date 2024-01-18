@@ -1,4 +1,7 @@
+// Import React and useState from React library
 import React,{ useState } from "react";
+
+// Import components from MUI library
 import {grey} from '@mui/material/colors';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -19,126 +22,113 @@ import Resume1 from "../Details/resume1";
 import { Modal } from 'react-bootstrap';
 import Navbar from '../Header';
 
-
-const Header=()=>{
-    // const [pageno,setPage] =useState({
-    //     prop1:'0'}
-    //     );
+// Header component definition
+const Header = () => {
+    // State to manage the page number and the modal visibility
     const initial = 0;
+    const [pageno, setPage] = useState(initial);
+    const [showModal, setShowModal] = useState(false);
 
-   const [pageno ,setPage]=useState(()=>{
-    const storedValue = sessionStorage.getItem('myState');
-    return storedValue ? storedValue : initial;
-    
-   })
-        const [showModal, setShowModal] = useState(false);
-        const handleModalButtonClick = () => {
-            // Show the modal when the button is clicked
-            setShowModal(true);
-          };
-        
-          const handleClose = () => {
-            // Close the modal when the close button is clicked
-            setShowModal(false);
-          };
-          
-          const image1 =(e)=>{
-            e.preventDefault();
-            const newState = { ...pageno, prop1: '1' };
-            setPage(1);
-  
-            sessionStorage.setItem('myState', 1 );
-            console.log('before sending from home',pageno);
-            setShowModal(true);
-        }
-        const image2 =(e)=>{
-          e.preventDefault();
-          const newState = { ...pageno, prop1: '2' };
-          setPage(2);
+    // Function to handle the opening of the modal
+    const handleModalButtonClick = () => {
+        setShowModal(true);
+    };
 
-          sessionStorage.setItem('myState', 2 );
-          console.log('before sending from home',pageno);
-          setShowModal(true);
-      }
-        const image3 =(e)=>{
-            e.preventDefault();
-            const newState = { ...pageno, prop1: '3' };
-            setPage(3);
+    // Function to handle the closing of the modal
+    const handleClose = () => {
+        setShowModal(false);
+    };
 
-            sessionStorage.setItem('myState', 3 );
-            console.log('before sending from home',pageno);
-            // alert("You have selected resume template :01");
-            setShowModal(true);
-        }
+    // Functions to handle the selection of different template images
+    const image1 = (e) => {
+        e.preventDefault();
+        setPage(1);
+        sessionStorage.setItem('myState', 1);
+        setShowModal(true);
+    }
 
-        const image4 =(e)=>{
-          e.preventDefault();
-          const newState = { ...pageno, prop1: '4' };
-          setPage(4);
+    const image2 = (e) => {
+        e.preventDefault();
+        setPage(2);
+        sessionStorage.setItem('myState', 2);
+        setShowModal(true);
+    }
 
-          sessionStorage.setItem('myState', 4 );
-          console.log('before sending from home',pageno);
-          setShowModal(true);
-      }
-      const preventdef=()=>{
-        
-      }
-        
-    return(
-      
-    <Box sx={{flexGrow:1}} >
-    <Navbar/>
-        
-        <Typography variant="h4" component="div" class="header-mid">Templates</Typography>
-        <Typography variant="h7" component="div" text-align="start" paddingLeft="10%" fontSize="small">Select from the templates available</Typography>
-       
-        <Container className="style">
-             <div className="imageContainer">
-             <div class="middle">
-              <button class="imageText" to="/details" onClick={image1}>Choose</button>
-            </div>            
-            <img src={Card1} alt="ye" text="img loaded" class="template-snaps"/>
-            <div class="middle">
-              <button class="imageText" to="/details" onClick={image2}>Choose</button>
-            </div>      
-            <img src={Card2} alt="ye" text="img loaded" class="template-snaps"/>
-            <div class="middle">
-              <button class="imageText" to="/details" onClick={image3}>Choose</button>
-            </div>      
-             
-            <img src={Card3} alt="ye" text="img loaded" class="template-snaps img_img3"/>
-            <div class="middle">
-              <button class="imageText" to="/details" onClick={image4}>Choose</button>
-            </div>      
-            <img src={Card4} alt="ye" text="img loaded" class="template-snaps "/>
+    const image3 = (e) => {
+        e.preventDefault();
+        setPage(3);
+        sessionStorage.setItem('myState', 3);
+        setShowModal(true);
+    }
+
+    const image4 = (e) => {
+        e.preventDefault();
+        setPage(4);
+        sessionStorage.setItem('myState', 4);
+        setShowModal(true);
+    }
+
+    // Function to prevent the default behavior of a link
+    const preventdef = () => {}
+
+    // JSX structure for the Header component
+    return (
+        <Box sx={{flexGrow:1}}>
+            {/* Navbar component */}
+            <Navbar/>
+
+            {/* Typography components for header */}
+            <Typography variant="h4" component="div" class="header-mid">Templates</Typography>
+            <Typography variant="h7" component="div" text-align="start" paddingLeft="10%" fontSize="small">Select from the templates available</Typography>
             
-            
+            {/* Container for template images */}
+            <Container className="style">
+                <div className="imageContainer">
+                    {/* Template Image 1 */}
+                    <div class="middle">
+                        <button class="imageText" to="/details" onClick={image1}>Choose</button>
+                    </div>            
+                    <img src={Card1} alt="ye" text="img loaded" class="template-snaps"/>
+
+                    {/* Template Image 2 */}
+                    <div class="middle">
+                        <button class="imageText" to="/details" onClick={image2}>Choose</button>
+                    </div>      
+                    <img src={Card2} alt="ye" text="img loaded" class="template-snaps"/>
+
+                    {/* Template Image 3 */}
+                    <div class="middle">
+                        <button class="imageText" to="/details" onClick={image3}>Choose</button>
+                    </div>      
+                    <img src={Card3} alt="ye" text="img loaded" class="template-snaps img_img3"/>
+
+                    {/* Template Image 4 */}
+                    <div class="middle">
+                        <button class="imageText" to="/details" onClick={image4}>Choose</button>
+                    </div>      
+                    <img src={Card4} alt="ye" text="img loaded" class="template-snaps"/>
+                </div>
+
+                {/* Modal for template selection confirmation */}
+                <Modal show={showModal} onHide={handleClose}>
+                    <Modal.Header>
+                        <Modal.Title>You're about to proceed with your choice!!</Modal.Title>
+                        <Link to="/details" onClick={preventdef} >
+                            <Button variant="success" onClick={handleClose}>
+                                Proceed
+                            </Button>
+                        </Link>
+                    </Modal.Header>
+                </Modal>
+            </Container>
+
+            {/* Container for Details component */}
+            <div className="opacity">
+                <Details pageno={pageno}/>
             </div>
-            <Modal show={showModal} onHide={handleClose}>
-        <Modal.Header>
-          <Modal.Title>You're about to proceed with your choice!!</Modal.Title>
-          <Link to="/details" onClick={preventdef} >
-          <Button variant="success" onClick={handleClose}>
-            Proceed
-        
-          </Button>
-          </Link>
-        </Modal.Header>
-        {/* <Modal.Body>
-          This is your custom message. You can add any content, including buttons, here.
-        </Modal.Body> */}
-        
-      </Modal>
-        </Container>
-        <div className="opacity">
-        <Details pageno={pageno}/>
-        {/* <Resume1 pageno={pageno}/> */}
-        </div>
-
-        
-    </Box>
-    )
+        </Box>
+    );
 };
 
-
+// Export the Header component as the default export
 export default Header;
