@@ -1,6 +1,6 @@
+// Import React and necessary components from libraries
 import React from "react";
 import { useEffect, useState } from "react";
-// import "./SideBar.css";
 import {
   Divider,
   List,
@@ -10,48 +10,56 @@ import {
   Box,
 } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
-import StarsRoundedIcon from "@mui/icons-material/StarsRounded";
-import WorkHistoryRoundedIcon from "@mui/icons-material/WorkHistoryRounded";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
+// Define the height for each item in the menu
 const ITEM_HEIGHT = 48;
 
+// Sidebar component definition
 const Sidebar = (props) => {
+  // Function to get the current window size
   const getWindowSize = () => {
     const { innerWidth, innerHeight } = window;
     return { innerWidth, innerHeight };
   };
 
+  // State variables for menu anchor element, window size, and menu open status
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [windowSize, setWindowSize] = useState(getWindowSize());
   const open = Boolean(anchorEl);
 
+  // Function to handle opening the menu
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
+  // Function to handle closing the menu
   const handleClose = () => {
     setAnchorEl(null);
   };
 
+  // Effect to update window size on resize
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());
     }
 
+    // Event listener for window resize
     window.addEventListener("resize", handleWindowResize);
 
+    // Cleanup function to remove event listener
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
 
+  // JSX structure for the Sidebar component
   return (
     <div>
+      {/* Conditional rendering based on window size */}
       {windowSize.innerWidth > 850 ? (
         <Box
           sx={{
@@ -62,6 +70,7 @@ const Sidebar = (props) => {
           }}
         >
           <List disablePadding>
+            {/* Personal Info ListItem */}
             <ListItem disablePadding>
               <ListItemButton
                 component="a"
@@ -75,12 +84,12 @@ const Sidebar = (props) => {
                 />
               </ListItemButton>
             </ListItem>
-            <Divider />
             {/* Add the rest of your ListItems here */}
           </List>
         </Box>
       ) : (
         <div>
+          {/* Menu for smaller screens */}
           <IconButton
             aria-label="more"
             id="long-button"
@@ -91,6 +100,7 @@ const Sidebar = (props) => {
           >
             <MoreVertIcon />
           </IconButton>
+          {/* Long menu */}
           <Menu
             id="long-menu"
             MenuListProps={{
@@ -106,6 +116,7 @@ const Sidebar = (props) => {
               },
             }}
           >
+            {/* Personal Info MenuItem */}
             <MenuItem
               sx={props.tab === 0 ? { color: "rgb(0, 128, 255)" } : null}
               onClick={() => {
@@ -128,4 +139,5 @@ const Sidebar = (props) => {
   );
 };
 
+// Export the Sidebar component as the default export
 export default Sidebar;
